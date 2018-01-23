@@ -36,8 +36,10 @@ namespace smartpointers {
 
     void testSharedPtr() {
         std::cout<<"Entering shared ptr."<<std::endl;
+        // Can create a shared pointer using make_shared with c++11
         auto a = std::make_shared<SPointer>(1);
         auto b = a;
+        // use_count gives the number of times the pointer is accessed
         std::cout<<"Use count : "<<a.use_count()<<std::endl;;
         std::shared_ptr<SPointer>  c(new SPointer(2));
         std::cout<<"Leaving shared ptr."<<std::endl;
